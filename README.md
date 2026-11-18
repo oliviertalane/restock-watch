@@ -59,7 +59,7 @@ Terms are case-insensitive regular expressions, so plain words work. Include and
 | `INCLUDE_KEYWORDS` | | Terms every announced title must match one of, for all URLs. |
 | `EXCLUDE_KEYWORDS` | | Terms that block an announcement, for all URLs. |
 | `ALERT_SOLD_OUT_NEW` | `true` | Announce new products even when they are listed as sold out (you are told again when they are in stock). |
-| `DISCORD_MENTION` | | Text put in front of every alert, e.g. `@everyone` or `<@&ROLE_ID>`. |
+| `DISCORD_MENTION` | | Text put in front of every alert, e.g. `@everyone` or a role mention. |
 | `DISCORD_USERNAME` | `Restock Watch` | Name the webhook posts under. |
 | `CURRENCY_SYMBOL` | `$` | Shown in front of prices. |
 | `TZ` | `UTC` | Time zone for the daily heartbeat, e.g. `America/Toronto`. |
@@ -92,7 +92,7 @@ pip install -r requirements.txt
 python -m restock_watch check "https://store.example/collections/headphones | include=wireless"
 ```
 
-`python -m restock_watch` runs the scanner in a loop (the template's start command); `python -m restock_watch once` runs one scan and exits, for a cron schedule. Run the tests with `pip install -r requirements-dev.txt && pytest`.
+`python -m restock_watch` runs the scanner in a loop (the template's start command); `python -m restock_watch once` runs one scan and exits, for a cron schedule. Run the tests with `pip install -r requirements-dev.txt`, then `pytest`.
 
 **Responsible use.** You choose the pages, so you are responsible for complying with each site's terms of use and with Railway's policies. Restock Watch is built to be gentle: one request at a time per store, a five-minute minimum between scans, and it backs off when a store refuses requests.
 
