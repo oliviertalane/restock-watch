@@ -49,7 +49,7 @@ https://store-four.example/products/some-grinder
 
 Terms are case-insensitive regular expressions, so plain words work. Include and exclude terms add up: `INCLUDE_KEYWORDS`/`EXCLUDE_KEYWORDS` + section + URL. Filters only choose what is announced; every product on a watched page is tracked.
 
-**Variables**
+**Variables** (the template asks for the first ones; add any other in the service's Variables tab)
 
 | Variable | Default | Description |
 |---|---|---|
