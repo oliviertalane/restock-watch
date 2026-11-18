@@ -1,6 +1,6 @@
 # Deploy and Host Restock Watch with Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/STjQOm)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/restock-watch)
 
 Restock Watch watches online store pages you choose and posts to a Discord channel when a new product appears or a sold-out product is back in stock. It reads Shopify, Lightspeed, CrystalCommerce and Ecwid stores natively, plus any product page with schema.org data, and needs no code changes: you paste URLs into a variable.
 
