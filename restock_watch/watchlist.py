@@ -39,8 +39,10 @@ log = logging.getLogger(__name__)
 
 OPTION_KEYS = ("include", "exclude", "label", "platform", "via", "impersonate")
 VIA_VALUES = ("", "direct", "proxy", "relay")
-# Several URLs on one line (a pasted single-line variable): split before each http(s)://
-ENTRY_SPLIT = re.compile(r"\s*[,;]\s*(?=https?://)|\s+(?=https?://)")
+# Several URLs on one line (a pasted single-line variable): split before each http(s)://,
+# even with no separator left (a single-line input that drops the line breaks of a paste),
+# except where it follows = ? & or % (a URL passed as a query parameter).
+ENTRY_SPLIT = re.compile(r"\s*[,;]\s*(?=https?://)|\s+(?=https?://)|(?<=[^\s=?&%])(?=https?://)")
 
 
 @dataclass(frozen=True)

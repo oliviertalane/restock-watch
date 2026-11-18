@@ -15,6 +15,13 @@ def test_plain_list():
     assert watches[0].filter.matches("anything")
 
 
+def test_urls_pasted_on_one_line():
+    for line in ("https://a.example/x https://b.example/y/, https://c.example/z?u=https://d.example",
+                 "https://a.example/xhttps://b.example/y/https://c.example/z?u=https://d.example"):
+        assert [w.url for w in parse_watchlist(line)] == [
+            "https://a.example/x", "https://b.example/y/", "https://c.example/z?u=https://d.example"]
+
+
 def test_sections_and_options_add_up():
     watches = parse_watchlist("""
         [Audio] | include=wireless,noise cancelling | exclude=case
